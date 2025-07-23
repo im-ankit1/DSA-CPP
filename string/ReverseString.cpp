@@ -7,7 +7,7 @@ string reversestr(string s){
     int n=s.length();
     string ans = "";
     reverse(s.begin() , s.end());
-    for(int i =0; i<n; i++){
+    for(int i =0; i< n; i++){
         string word="";
         while(i<n && s[i]!=' '){
             word = word+s[i];
@@ -29,6 +29,7 @@ void substr(string ans){
 
 int main(){
     string s = "the sky is blue";
+    cout<<s.length()<<endl;
     string result = reversestr(s);
     substr(result);
 

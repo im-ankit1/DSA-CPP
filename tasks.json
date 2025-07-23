@@ -1,4 +1,4 @@
- {
+{
   "version": "2.0.0",
   "tasks": [
     {
@@ -7,14 +7,14 @@
       "command": "cmd.exe",
       "args": [
         "/c",
-        "g++ \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\" && \"${fileDirname}\\${fileBasenameNoExtension}.exe\""
+        "g++ -std=c++11 \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\" && \"${fileDirname}\\${fileBasenameNoExtension}.exe\""
       ],
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "problemMatcher": [],
-      "detail": "Builds and runs the currently open C++ file"
+      "detail": "Builds and runs the currently open C++ file with C++11 standard"
     }
   ]
 }

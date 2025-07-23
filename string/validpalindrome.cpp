@@ -4,33 +4,39 @@
 using namespace std;
 
 bool isPalindrome(string s) {
-    int left = 0;
-    int right = s.length() - 1;
+    int st = 0, end = s.length() - 1;
 
-    while (left < right) {
+    while (st < end) {
         // Skip non-alphanumeric characters
-        while (left < right && !isalnum(s[left])) left++;
-        while (left < right && !isalnum(s[right])) right--;
+        if (!isalnum(s[st])) {
+            st++;
+            continue;
+        }
+        if (!isalnum(s[end])) {
+            end--;
+            continue;
+        }
 
-        // Compare after converting to lowercase
-        if (tolower(s[left]) != tolower(s[right])) return false;
+        // Compare characters in lowercase
+        if (tolower(s[st]) != tolower(s[end])) {
+            return false;
+        }
 
-        left++;
-        right--;
+        st++;
+        end--;
     }
 
     return true;
 }
 
 int main() {
-    string s;
-    cout << "Enter a string: ";
-    getline(cin, s);
+    string s = "abcdcba";
 
-    if (isPalindrome(s))
+    if (isPalindrome(s)) {
         cout << "Valid Palindrome" << endl;
-    else
+    } else {
         cout << "Not a Palindrome" << endl;
+    }
 
     return 0;
 }
