@@ -9,9 +9,9 @@ void permute(string str, int left, int right) {
     }
 
     for (int i = left; i <= right; i++) {
-        swap(str[left], str[i]);              // Swap current index with the loop index
-        permute(str, left + 1, right);        // Recurse for the next index
-        swap(str[left], str[i]);              // Backtrack to restore original string
+        swap(str[left], str[i]);           
+        permute(str, left + 1, right);         
+        swap(str[left], str[i]);               
     }
 }
 
@@ -19,7 +19,7 @@ int main() {
     string s;
     cout << "Enter a string: ";
     cin >> s;
-
+    
     cout << "All permutations:\n";
     permute(s, 0, s.length() - 1);
 

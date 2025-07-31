@@ -32,7 +32,7 @@ bool isPalindrome(string s) {
 int main() {
     string s = "abcdcba";
 
-    if (isPalindrome(s)) {
+    if (isPalindrome(s)==1) {
         cout << "Valid Palindrome" << endl;
     } else {
         cout << "Not a Palindrome" << endl;
